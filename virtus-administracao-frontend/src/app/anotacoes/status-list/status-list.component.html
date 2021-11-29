@@ -1,0 +1,10 @@
+<h2>Status</h2>
+<button [routerLink]="['/status', 0]">Novo</button>
+<ul class="status">
+  <li *ngFor="let status of statuses$ | async" [class.selected]="status.id === selectedId">
+    <a [routerLink]="['/status', status.id]">
+      <span class="badge">{{ status.id }}</span>{{ status.name }}
+    </a>
+  </li>
+</ul>
+

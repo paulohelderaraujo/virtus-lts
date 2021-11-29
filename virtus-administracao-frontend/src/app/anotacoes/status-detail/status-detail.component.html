@@ -1,0 +1,17 @@
+<h2>Status</h2>
+<div *ngIf="status$ | async as status else new">
+  <h3>{{ status.name }}</h3>
+  <p>Id: {{ status.id }}</p>
+  <label for="status-name">Status name: </label>
+  <input type="text" id="status-name" [(ngModel)]="status.name" placeholder="name" #statusname/>
+  <button (click)="update(status,statusname.value)">Atualizar</button>
+  <button (click)="delete(status.id)">Remover</button>
+</div>
+<ng-template #new>  
+  <div>
+    <label for="status-name">Status name: </label>
+    <input type="text" id="status-name" placeholder="name" #statusname/>
+  </div>
+  <button (click)="save(statusname.value)">Criar</button>
+</ng-template>
+<button (click)="refresh()">Voltar</button>
