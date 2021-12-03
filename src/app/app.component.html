@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <h1 class="title">{{title}}</h1>
+  <nav class="hero">
+    <a routerLink="/anotacoes-component" routerLinkActive="active">Anotações</a>
+    <a routerLink="/chamados-component" routerLinkActive="active">Chamados</a>
+    <a routerLink="/entidades-component" routerLinkActive="active">Entidades</a>
+    <a routerLink="/escritorios-component" routerLinkActive="active">Escritorios</a>
+    <a routerLink="/funcionalidades-component" routerLinkActive="active">Funcionalidades</a>
+    <a routerLink="/perfis-component" routerLinkActive="active">Perfis</a>
+    <a routerLink="/radares-component" routerLinkActive="active">Radares</a>
+    <a routerLink="/status-component" routerLinkActive="active">Status</a>
+    <a routerLink="/usuarios-component" routerLinkActive="active">Usuários</a>
+    <a routerLink="/versoes-component" routerLinkActive="active">Versões</a>
+    <a routerLink="/workflows-component" routerLinkActive="active">Workflows</a>
+    <a routerLink="/acoes-component" routerLinkActive="active">Ações</a>
+  </nav>
+<!-- The routed views render in the <router-outlet>-->
+  <div [@routeAnimation]="getAnimationData(routerOutlet)">
+    <router-outlet #routerOutlet="outlet"></router-outlet>
+  </div>
+  <router-outlet name="popup"></router-outlet>
+</div>

@@ -1,0 +1,63 @@
+/* Application-wide Styles */
+h1 {
+    color: #369;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 250%;
+  }
+  h2, h3 {
+    color: #444;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+  }
+  body {
+    margin: 2em;
+  }
+  body, input[type="text"], button {
+    color: #333;
+    font-family: Cambria, Georgia, serif;
+  }
+  /* everywhere else */
+  * {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .hero {
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    width: 30em;    
+  }
+
+  .hero .badge1 {
+    display: inline-block;
+    font-size: small;
+    color: white;
+    padding: 0 0.7em 0 0.7em;
+    background-color:#405061;
+    line-height: 1em;
+    position: relative;
+    left: -1px;
+    top: -4px;
+    height: 1.8em;
+    margin-left: .8em;
+    margin-right: .8em;
+    border-radius: 4px 4px 4px 4px;
+  }
+  
+  .hero .badge2 {
+    display: inline-block;
+    font-size: small;
+    color: white;
+    padding: 0 0.7em 0 0.7em;
+    background-color:#be1010;
+    line-height: 1em;
+    position: relative;
+    left: -1px;
+    top: -4px;
+    height: 1.8em;
+    margin-left: .8em;
+    margin-right: .8em;
+    border-radius: 4px 4px 4px 4px;
+  }
+  
+  

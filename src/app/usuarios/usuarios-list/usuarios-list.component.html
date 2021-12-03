@@ -1,0 +1,10 @@
+<h2>Usuários</h2>
+<button [routerLink]="['/usuario', 0]">Novo</button>
+<ul class="usuario">
+  <li *ngFor="let usuario of usuarios$ | async" [class.selected]="usuario.id === selectedId">
+    <a [routerLink]="['/usuario', usuario.id]">
+      <span class="badge">{{ usuario.id }}</span>{{ usuario.name }}
+    </a>
+  </li>
+</ul>
+

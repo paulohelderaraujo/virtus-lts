@@ -1,0 +1,10 @@
+<h2>Workflows</h2>
+<button [routerLink]="['/workflow', 0]">Novo</button>
+<ul class="workflow">
+  <li *ngFor="let workflow of workflows$ | async" [class.selected]="workflow.id === selectedId">
+    <a [routerLink]="['/workflow', workflow.id]">
+      <span class="badge">{{ workflow.id }}</span>{{ workflow.name }}
+    </a>
+  </li>
+</ul>
+

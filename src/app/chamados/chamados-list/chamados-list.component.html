@@ -1,0 +1,10 @@
+<h2>Chamados</h2>
+<button [routerLink]="['/chamado', 0]">Novo</button>
+<ul class="chamado">
+  <li *ngFor="let chamado of chamados$ | async" [class.selected]="chamado.id === selectedId">
+    <a [routerLink]="['/chamado', chamado.id]">
+      <span class="badge">{{ chamado.id }}</span>{{ chamado.name }}
+    </a>
+  </li>
+</ul>
+

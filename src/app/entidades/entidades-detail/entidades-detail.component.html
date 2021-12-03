@@ -1,0 +1,17 @@
+<h2>Entidades</h2>
+<div *ngIf="entidade$ | async as entidade else new">
+  <h3>{{ entidade.name }}</h3>
+  <p>Id: {{ entidade.id }}</p>
+  <label for="entidade-name">Entidade name: </label>
+  <input type="text" id="entidade-name" [(ngModel)]="entidade.name" placeholder="name" #entidadename/>
+  <button (click)="update(entidade,entidadename.value)">Atualizar</button>
+  <button (click)="delete(entidade.id)">Remover</button>
+</div>
+<ng-template #new>
+  <div>
+    <label for="entidade-name">Entidades name: </label>
+    <input type="text" id="entidade-name" placeholder="name" #entidadename/>
+  </div>
+  <button (click)="save(entidadename.value)">Criar</button>
+</ng-template>
+<button (click)="refresh()">Voltar</button>

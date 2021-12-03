@@ -1,0 +1,17 @@
+<h2>Escritórios</h2>
+<div *ngIf="escritorio$ | async as escritorio else new">
+  <h3>{{ escritorio.name }}</h3>
+  <p>Id: {{ escritorio.id }}</p>
+  <label for="escritorio-name">Escritório name: </label>
+  <input type="text" id="escritorio-name" [(ngModel)]="escritorio.name" placeholder="name" #escritorioname/>
+  <button (click)="update(escritorio,escritorioname.value)">Atualizar</button>
+  <button (click)="delete(escritorio.id)">Remover</button>
+</div>
+<ng-template #new>
+  <div>
+    <label for="escritorio-name">Escritórios name: </label>
+    <input type="text" id="escritorio-name" placeholder="name" #escritorioname/>
+  </div>
+  <button (click)="save(escritorioname.value)">Criar</button>
+</ng-template>
+<button (click)="refresh()">Voltar</button>

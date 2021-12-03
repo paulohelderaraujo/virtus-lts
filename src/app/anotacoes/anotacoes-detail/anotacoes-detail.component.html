@@ -1,0 +1,18 @@
+<h2>Anotações</h2>
+<div *ngIf="anotacao$ | async as anotacao else new">
+  <h3>{{ anotacao.name }}</h3>
+  <p>Id: {{ anotacao.id }}</p>
+  <label for="anotacao-name">Anotação name: </label>
+  <input type="text" id="anotacao-name" [(ngModel)]="anotacao.name" placeholder="name" #anotacaoname/>
+  <button (click)="update(anotacao,anotacaoname.value)">Atualizar</button>
+  <button (click)="delete(anotacao.id)">Remover</button>
+</div>
+<ng-template #new>
+  <div>
+    <label for="anotacao-name">Anotações name: </label>
+    <input type="text" id="anotacao-name" placeholder="name" #anotacaoname/>
+  </div>
+  <button (click)="save(anotacaoname.value)">Criar</button>
+</ng-template>
+<button (click)="refresh()">Voltar</button>
+

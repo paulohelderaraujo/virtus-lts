@@ -1,0 +1,17 @@
+<h2>Perfis</h2>
+<div *ngIf="perfil$ | async as perfil else new">
+  <h3>{{ perfil.name }}</h3>
+  <p>Id: {{ perfil.id }}</p>
+  <label for="perfil-name">Perfil name: </label>
+  <input type="text" id="perfil-name" [(ngModel)]="perfil.name" placeholder="name" #perfilname/>
+  <button (click)="update(perfil,perfilname.value)">Atualizar</button>
+  <button (click)="delete(perfil.id)">Remover</button>
+</div>
+<ng-template #new>
+  <div>
+    <label for="perfil-name">Perfis name: </label>
+    <input type="text" id="perfil-name" placeholder="name" #perfilname/>
+  </div>
+  <button (click)="save(perfilname.value)">Criar</button>
+</ng-template>
+<button (click)="refresh()">Voltar</button>

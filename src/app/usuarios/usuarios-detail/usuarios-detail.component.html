@@ -1,0 +1,17 @@
+<h2>Usuários</h2>
+<div *ngIf="usuario$ | async as usuario else new">
+  <h3>{{ usuario.name }}</h3>
+  <p>Id: {{ usuario.id }}</p>
+  <label for="usuario-name">Usuario name: </label>
+  <input type="text" id="usuario-name" [(ngModel)]="usuario.name" placeholder="name" #usuarioname/>
+  <button (click)="update(usuario,usuarioname.value)">Atualizar</button>
+  <button (click)="delete(usuario.id)">Remover</button>
+</div>
+<ng-template #new>
+  <div>
+    <label for="usuario-name">Usuarios name: </label>
+    <input type="text" id="usuario-name" placeholder="name" #usuarioname/>
+  </div>
+  <button (click)="save(usuarioname.value)">Criar</button>
+</ng-template>
+<button (click)="refresh()">Voltar</button>

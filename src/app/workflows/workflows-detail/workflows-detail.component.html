@@ -1,0 +1,17 @@
+<h2>Workflows</h2>
+<div *ngIf="workflow$ | async as workflow else new">
+  <h3>{{ workflow.name }}</h3>
+  <p>Id: {{ workflow.id }}</p>
+  <label for="workflow-name">Workflow name: </label>
+  <input type="text" id="workflow-name" [(ngModel)]="workflow.name" placeholder="name" #workflowname/>
+  <button (click)="update(workflow,workflowname.value)">Atualizar</button>
+  <button (click)="delete(workflow.id)">Remover</button>
+</div>
+<ng-template #new>
+  <div>
+    <label for="workflow-name">Workflows name: </label>
+    <input type="text" id="workflow-name" placeholder="name" #workflowname/>
+  </div>
+  <button (click)="save(workflowname.value)">Criar</button>
+</ng-template>
+<button (click)="refresh()">Voltar</button>

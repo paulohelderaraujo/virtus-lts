@@ -1,0 +1,10 @@
+<h2>Funcionalidades</h2>
+<button [routerLink]="['/funcionalidade', 0]">Novo</button>
+<ul class="funcionalidade">
+  <li *ngFor="let funcionalidade of funcionalidades$ | async" [class.selected]="funcionalidade.id === selectedId">
+    <a [routerLink]="['/funcionalidade', funcionalidade.id]">
+      <span class="badge">{{ funcionalidade.id }}</span>{{ funcionalidade.name }}
+    </a>
+  </li>
+</ul>
+

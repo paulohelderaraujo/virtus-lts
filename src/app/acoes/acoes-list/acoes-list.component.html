@@ -1,0 +1,10 @@
+<h2>Ações</h2>
+<button [routerLink]="['/acao', 0]">Novo</button>
+<ul class="acao">
+  <li *ngFor="let acao of acoes$ | async" [class.selected]="acao.id === selectedId">
+    <a [routerLink]="['/acao', acao.id]">
+      <span class="badge">{{ acao.id }}</span>{{ acao.name }}
+    </a>
+  </li>
+</ul>
+

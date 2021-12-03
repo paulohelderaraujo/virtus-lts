@@ -1,0 +1,10 @@
+<h2>Anotações</h2>
+<button [routerLink]="['/anotacao', 0]">Novo</button>
+<ul class="anotacao">
+  <li *ngFor="let anotacao of anotacoes$ | async" [class.selected]="anotacao.id === selectedId">
+    <a [routerLink]="['/anotacao', anotacao.id]">
+      <span class="badge">{{ anotacao.id }}</span>{{ anotacao.name }}
+    </a>
+  </li>
+</ul>
+

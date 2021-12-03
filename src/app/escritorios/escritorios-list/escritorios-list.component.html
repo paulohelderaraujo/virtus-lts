@@ -1,0 +1,10 @@
+<h2>Escritórios</h2>
+<button [routerLink]="['/escritorio', 0]">Novo</button>
+<ul class="escritorio">
+  <li *ngFor="let escritorio of escritorios$ | async" [class.selected]="escritorio.id === selectedId">
+    <a [routerLink]="['/escritorio', escritorio.id]">
+      <span class="badge">{{ escritorio.id }}</span>{{ escritorio.name }}
+    </a>
+  </li>
+</ul>
+

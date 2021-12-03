@@ -1,0 +1,17 @@
+<h2>Radares</h2>
+<div *ngIf="radar$ | async as radar else new">
+  <h3>{{ radar.name }}</h3>
+  <p>Id: {{ radar.id }}</p>
+  <label for="radar-name">Radar name: </label>
+  <input type="text" id="radar-name" [(ngModel)]="radar.name" placeholder="name" #radarname/>
+  <button (click)="update(radar,radarname.value)">Atualizar</button>
+  <button (click)="delete(radar.id)">Remover</button>
+</div>
+<ng-template #new>
+  <div>
+    <label for="radar-name">Radares name: </label>
+    <input type="text" id="radar-name" placeholder="name" #radarname/>
+  </div>
+  <button (click)="save(radarname.value)">Criar</button>
+</ng-template>
+<button (click)="refresh()">Voltar</button>

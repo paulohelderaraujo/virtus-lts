@@ -1,0 +1,17 @@
+<h2>Funcionalidades</h2>
+<div *ngIf="funcionalidade$ | async as funcionalidade else new">
+  <h3>{{ funcionalidade.name }}</h3>
+  <p>Id: {{ funcionalidade.id }}</p>
+  <label for="funcionalidade-name">Funcionalidade name: </label>
+  <input type="text" id="funcionalidade-name" [(ngModel)]="funcionalidade.name" placeholder="name" #funcionalidadename/>
+  <button (click)="update(funcionalidade,funcionalidadename.value)">Atualizar</button>
+  <button (click)="delete(funcionalidade.id)">Remover</button>
+</div>
+<ng-template #new>
+  <div>
+    <label for="funcionalidade-name">Funcionalidades name: </label>
+    <input type="text" id="funcionalidade-name" placeholder="name" #funcionalidadename/>
+  </div>
+  <button (click)="save(funcionalidadename.value)">Criar</button>
+</ng-template>
+<button (click)="refresh()">Voltar</button>

@@ -1,0 +1,10 @@
+<h2>Entidades</h2>
+<button [routerLink]="['/entidade', 0]">Novo</button>
+<ul class="entidade">
+  <li *ngFor="let entidade of entidades$ | async" [class.selected]="entidade.id === selectedId">
+    <a [routerLink]="['/entidade', entidade.id]">
+      <span class="badge">{{ entidade.id }}</span>{{ entidade.name }}
+    </a>
+  </li>
+</ul>
+

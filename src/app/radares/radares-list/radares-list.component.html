@@ -1,0 +1,10 @@
+<h2>Radares</h2>
+<button [routerLink]="['/radar', 0]">Novo</button>
+<ul class="radar">
+  <li *ngFor="let radar of radares$ | async" [class.selected]="radar.id === selectedId">
+    <a [routerLink]="['/radar', radar.id]">
+      <span class="badge">{{ radar.id }}</span>{{ radar.name }}
+    </a>
+  </li>
+</ul>
+

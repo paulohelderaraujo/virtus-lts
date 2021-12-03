@@ -1,0 +1,10 @@
+<h2>Perfis</h2>
+<button [routerLink]="['/perfil', 0]">Novo</button>
+<ul class="perfil">
+  <li *ngFor="let perfil of perfis$ | async" [class.selected]="perfil.id === selectedId">
+    <a [routerLink]="['/perfil', perfil.id]">
+      <span class="badge">{{ perfil.id }}</span>{{ perfil.name }}
+    </a>
+  </li>
+</ul>
+

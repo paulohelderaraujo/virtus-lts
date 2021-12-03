@@ -1,0 +1,17 @@
+<h2>Chamados</h2>
+<div *ngIf="chamado$ | async as acao else new">
+  <h3>{{ chamado.name }}</h3>
+  <p>Id: {{ chamado.id }}</p>
+  <label for="chamado-name">Chamado name: </label>
+  <input type="text" id="chamado-name" [(ngModel)]="chamado.name" placeholder="name" #chamadoname/>
+  <button (click)="update(chamado,chamadoname.value)">Atualizar</button>
+  <button (click)="delete(chamado.id)">Remover</button>
+</div>
+<ng-template #new>
+  <div>
+    <label for="chamado-name">Chamados name: </label>
+    <input type="text" id="chamado-name" placeholder="name" #chamadoname/>
+  </div>
+  <button (click)="save(chamadoname.value)">Criar</button>
+</ng-template>
+<button (click)="refresh()">Voltar</button>

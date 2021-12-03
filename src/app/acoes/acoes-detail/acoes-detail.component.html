@@ -1,0 +1,17 @@
+<h2>Ações</h2>
+<div *ngIf="acao$ | async as acao else new">
+  <h3>{{ acao.name }}</h3>
+  <p>Id: {{ acao.id }}</p>
+  <label for="acao-name">Ação name: </label>
+  <input type="text" id="acao-name" [(ngModel)]="acao.name" placeholder="name" #acaoname/>
+  <button (click)="update(acao,acaoname.value)">Atualizar</button>
+  <button (click)="delete(acao.id)">Remover</button>
+</div>
+<ng-template #new>
+  <div>
+    <label for="acao-name">Ações name: </label>
+    <input type="text" id="acao-name" placeholder="name" #acaoname/>
+  </div>
+  <button (click)="save(acaoname.value)">Criar</button>
+</ng-template>
+<button (click)="refresh()">Voltar</button>

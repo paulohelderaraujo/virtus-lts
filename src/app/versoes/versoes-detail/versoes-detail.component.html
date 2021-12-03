@@ -1,0 +1,17 @@
+<h2>Versões</h2>
+<div *ngIf="versao$ | async as versao else new">
+  <h3>{{ versao.name }}</h3>
+  <p>Id: {{ versao.id }}</p>
+  <label for="versao-name">Versao name: </label>
+  <input type="text" id="versao-name" [(ngModel)]="versao.name" placeholder="name" #versaoname/>
+  <button (click)="update(versao,versaoname.value)">Atualizar</button>
+  <button (click)="delete(versao.id)">Remover</button>
+</div>
+<ng-template #new>
+  <div>
+    <label for="versao-name">Versoes name: </label>
+    <input type="text" id="versao-name" placeholder="name" #versaoname/>
+  </div>
+  <button (click)="save(versaoname.value)">Criar</button>
+</ng-template>
+<button (click)="refresh()">Voltar</button>
